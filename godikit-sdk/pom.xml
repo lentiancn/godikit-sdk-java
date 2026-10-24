@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.godikit.sdk</groupId>
+        <artifactId>godikit-parent</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>godikit-sdk-parent</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+    <name>GodiKit SDK Parent</name>
+    <description>Aggregator module of GodiKit SDK, grouping the core API artifact and the JDK 17
+        compatibility artifact.
+    </description>
+    <url>https://www.godikit.com/sdk</url>
+
+    <properties>
+        <godikit.java.version>8</godikit.java.version>
+    </properties>
+
+    <modules>
+        <module>godikit-sdk</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.godikit.sdk</groupId>
+                <artifactId>godikit-sdk</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>5.14.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.46</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>4.11.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>4.11.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <developers>
+        <developer>
+            <name>Len (田隆)</name>
+            <email>len@godikit.com</email>
+            <url>https://github.com/lentiancn</url>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://raw.githubusercontent.com/lentiancn/godikit-sdk-java/refs/heads/main/LICENSE</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/lentiancn/godikit-sdk-java</url>
+        <connection>scm:git:https://github.com/lentiancn/godikit-sdk-java.git</connection>
+        <developerConnection>scm:git:git@github.com:lentiancn/godikit-sdk-java.git</developerConnection>
+    </scm>
+</project>

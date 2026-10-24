@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.godikit.sdk</groupId>
+        <artifactId>godikit-sdk-parent-jdk17</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>godikit-sdk-jdk17</artifactId>
+    <version>${revision}</version>
+    <name>GodiKit SDK (JDK 17)</name>
+    <description>JDK 17 compatibility artifact of GodiKit SDK. Verifies that the sdk API compiles and
+        runs against the Java 17 toolchain while keeping the JDK 8 line as the baseline dependency.
+    </description>
+    <url>https://www.godikit.com/sdk</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.godikit.sdk</groupId>
+            <artifactId>godikit-sdk</artifactId>
+        </dependency>
+    </dependencies>
+
+    <developers>
+        <developer>
+            <name>Len (田隆)</name>
+            <email>len@godikit.com</email>
+            <url>https://github.com/lentiancn</url>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://raw.githubusercontent.com/lentiancn/godikit-sdk-java/refs/heads/main/LICENSE</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/lentiancn/godikit-sdk-java</url>
+        <connection>scm:git:https://github.com/lentiancn/godikit-sdk-java.git</connection>
+        <developerConnection>scm:git:git@github.com:lentiancn/godikit-sdk-java.git</developerConnection>
+    </scm>
+</project>
