@@ -7,11 +7,10 @@
     <artifactId>godikit-parent</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
-    <name>GodiKit SDK Parent</name>
-    <description>
-        An sdk utility package for JDK 8+, designed to unify the management of sdk components in Java
-        projects
-        and establish a consistent standard.
+    <name>GodiKit SDK Reactor</name>
+    <description>GodiKit SDK is a lightweight utility library for JDK 8+, providing null-safe default value
+        resolution and blank checks for strings and objects, so that application code can stay free of
+        repetitive null and empty guards.
     </description>
     <url>https://www.godikit.com/sdk</url>
 

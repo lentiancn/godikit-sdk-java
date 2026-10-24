@@ -11,10 +11,9 @@
 
     <artifactId>godikit-sdk</artifactId>
     <version>${revision}</version>
-    <name>GodiKit Exception</name>
-    <description>Core API artifact of GodiKit Exception for JDK 8+. Defines the ErrorCode contract, the
-        GlobalException and GlobalRuntimeException base classes, and the ErrorCodeRegistry that discovers error
-        code providers through the JDK ServiceLoader mechanism.
+    <name>GodiKit SDK</name>
+    <description>Core API artifact of GodiKit SDK for JDK 8+. Provides StringUtils and ObjectUtils helpers for
+        null-safe default value resolution, together with empty and blank checks for strings.
     </description>
     <url>https://www.godikit.com/sdk</url>
 
