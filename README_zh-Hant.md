@@ -8,13 +8,13 @@
 
 ## 為什麼選擇 godikit-sdk？
 
-| 場景                 | 不使用 godikit-sdk          | 使用 godikit-sdk                             |
-|--------------------|---------------------------|----------------------------------------------|
-| 空值與空白判斷            | 反覆編寫 `isEmpty` / `isBlank` 輔助方法 | 開箱即用的 `StringUtils` 與 `ObjectUtils`       |
-| 預設值兜底                | 處處都是三元運算式空值判斷                | `defaultIfNull` / `defaultIfEmpty` / `defaultIfBlank` |
-| 跨服務共享能力            | 每個專案複製貼上輔助方法                | 組織內統一依賴                                |
-| 第三方服務用戶端             | 每個專案手寫 HTTP 封裝                   | 獨立的 SDK 模組（規劃中）                          |
-| JDK 版本相容              | 單一構件無法同時適配兩套工具鏈               | 拆分 JDK 8 與 JDK 17 構件                        |
+| 場景       | 不使用 godikit-sdk                 | 使用 godikit-sdk                                        |
+|----------|---------------------------------|-------------------------------------------------------|
+| 空值與空白判斷  | 反覆編寫 `isEmpty` / `isBlank` 輔助方法 | 開箱即用的 `StringUtils` 與 `ObjectUtils`                   |
+| 預設值兜底    | 處處都是三元運算式空值判斷                   | `defaultIfNull` / `defaultIfEmpty` / `defaultIfBlank` |
+| 跨服務共享能力  | 每個專案複製貼上輔助方法                    | 組織內統一依賴                                               |
+| 第三方服務用戶端 | 每個專案手寫 HTTP 封裝                  | 獨立的 SDK 模組（規劃中）                                       |
+| JDK 版本相容 | 單一構件無法同時適配兩套工具鏈                 | 拆分 JDK 8 與 JDK 17 構件                                  |
 
 ## 功能特性
 
@@ -45,12 +45,12 @@
 
 ### 規劃中的 SDK 類別
 
-| 類別         | 用途                          | 狀態     |
-|------------|-----------------------------|--------|
-| 工具類         | 空值安全的字串與物件輔助方法                | 已提供    |
-| 共享常數        | 跨模組共享的布林標識等常數                  | 規劃中   |
-| 標識產生        | 為實體與記錄產生唯一標識                | 規劃中   |
-| 服務用戶端       | 第三方 API 的封裝                | 規劃中   |
+| 類別    | 用途             | 狀態  |
+|-------|----------------|-----|
+| 工具類   | 空值安全的字串與物件輔助方法 | 已提供 |
+| 共享常數  | 跨模組共享的布林標識等常數  | 規劃中 |
+| 標識產生  | 為實體與記錄產生唯一標識   | 規劃中 |
+| 服務用戶端 | 第三方 API 的封裝    | 規劃中 |
 
 ## 環境要求
 
@@ -86,12 +86,12 @@ import com.godikit.util.ObjectUtils;
 String name = ObjectUtils.defaultIfNull(user.getNickname(), "anonymous");
 
 // 空值判斷
-if (ObjectUtils.isNull(value)) {
-    // ...
+if(ObjectUtils.isNull(value)){
+  // ...
 }
 
-if (ObjectUtils.isNotNull(value)) {
-    // ...
+if(ObjectUtils.isNotNull(value)){
+  // ...
 }
 ```
 
@@ -116,23 +116,23 @@ boolean notBlank = StringUtils.isNotBlank(raw);
 
 ### `ObjectUtils`
 
-| 方法                            | 說明                          |
-|-------------------------------|-----------------------------|
+| 方法                            | 說明                                |
+|-------------------------------|-----------------------------------|
 | `defaultIfNull(O obj, O def)` | `obj` 為 null 時傳回 `def`，否則傳回 `obj` |
-| `isNull(Object obj)`          | `obj` 為 null 時傳回 `true`                |
-| `isNotNull(Object obj)`       | `obj` 不為 null 時傳回 `true`               |
+| `isNull(Object obj)`          | `obj` 為 null 時傳回 `true`           |
+| `isNotNull(Object obj)`       | `obj` 不為 null 時傳回 `true`          |
 
 ### `StringUtils`
 
-| 方法                                | 說明                                  |
-|-----------------------------------|-------------------------------------|
-| `defaultIfNull(String s, String def)` | `s` 為 null 時傳回 `def`             |
-| `defaultIfEmpty(String s, String def)` | `s` 為 null 或空字串時傳回 `def`      |
-| `defaultIfBlank(String s, String def)` | `s` 為 null 或僅含空白字元時傳回 `def` |
-| `isEmpty(String s)`               | `s` 為 null 或長度為 0 時傳回 `true`         |
-| `isNotEmpty(String s)`            | `s` 既不為 null 也不為空字串時傳回 `true`         |
-| `isBlank(String s)`               | `s` 為 null 或僅含空白字元時傳回 `true`         |
-| `isNotBlank(String s)`            | `s` 既不為 null 也不含空白字元時傳回 `true`         |
+| 方法                                     | 說明                             |
+|----------------------------------------|--------------------------------|
+| `defaultIfNull(String s, String def)`  | `s` 為 null 時傳回 `def`           |
+| `defaultIfEmpty(String s, String def)` | `s` 為 null 或空字串時傳回 `def`       |
+| `defaultIfBlank(String s, String def)` | `s` 為 null 或僅含空白字元時傳回 `def`    |
+| `isEmpty(String s)`                    | `s` 為 null 或長度為 0 時傳回 `true`   |
+| `isNotEmpty(String s)`                 | `s` 既不為 null 也不為空字串時傳回 `true`  |
+| `isBlank(String s)`                    | `s` 為 null 或僅含空白字元時傳回 `true`   |
+| `isNotBlank(String s)`                 | `s` 既不為 null 也不含空白字元時傳回 `true` |
 
 ## 授權條款
 
