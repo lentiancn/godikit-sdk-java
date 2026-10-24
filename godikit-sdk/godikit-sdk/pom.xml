@@ -12,8 +12,10 @@
     <artifactId>godikit-sdk</artifactId>
     <version>${revision}</version>
     <name>GodiKit SDK</name>
-    <description>Core API artifact of GodiKit SDK for JDK 8+. Provides StringUtils and ObjectUtils helpers for
-        null-safe default value resolution, together with empty and blank checks for strings.
+    <description>Core API artifact of GodiKit SDK for JDK 8+. Ships the foundational SDK utilities, currently the
+        StringUtils and ObjectUtils helpers for null-safe default value resolution together with empty and
+        blank checks, and serves as the root module for further SDK categories such as shared constants,
+        identifier generation and third-party service client wrappers.
     </description>
     <url>https://www.godikit.com/sdk</url>
 

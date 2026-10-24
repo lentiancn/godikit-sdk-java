@@ -8,9 +8,10 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
     <name>GodiKit SDK Reactor</name>
-    <description>GodiKit SDK is a lightweight utility library for JDK 8+, providing null-safe default value
-        resolution and blank checks for strings and objects, so that application code can stay free of
-        repetitive null and empty guards.
+    <description>GodiKit SDK is a general-purpose SDK library for JDK 8+, providing a shared development toolkit
+        for Java applications. It currently ships null-safe utility helpers for strings and objects, and is
+        designed to host further SDK categories such as shared constants, identifier generation and
+        third-party service client wrappers.
     </description>
     <url>https://www.godikit.com/sdk</url>
 

@@ -15,7 +15,7 @@
     <packaging>pom</packaging>
     <name>GodiKit SDK Parent (JDK 17)</name>
     <description>Aggregator module for the JDK 17 build of GodiKit SDK, grouping the JDK 17 compatibility
-        artifact that verifies the Java 17 bytecode target.
+        artifact that verifies the Java 17 bytecode target for the SDK API.
     </description>
     <url>https://www.godikit.com/sdk</url>
 

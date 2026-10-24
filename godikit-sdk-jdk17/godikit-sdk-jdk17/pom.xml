@@ -12,7 +12,7 @@
     <artifactId>godikit-sdk-jdk17</artifactId>
     <version>${revision}</version>
     <name>GodiKit SDK (JDK 17)</name>
-    <description>JDK 17 compatibility artifact of GodiKit SDK. Verifies that the sdk API compiles and
+    <description>JDK 17 compatibility artifact of GodiKit SDK. Verifies that the SDK API compiles and
         runs against the Java 17 toolchain while keeping the JDK 8 line as the baseline dependency.
     </description>
     <url>https://www.godikit.com/sdk</url>

@@ -13,7 +13,7 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
     <name>GodiKit SDK Parent</name>
-    <description>Aggregator module of GodiKit SDK, grouping the core API artifact and the JDK 17
+    <description>Aggregator module of GodiKit SDK, grouping the core SDK artifact and the JDK 17
         compatibility artifact.
     </description>
     <url>https://www.godikit.com/sdk</url>
