@@ -26,17 +26,42 @@ package com.godikit.util;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+/**
+ * Utility helpers for null checks and null-safe defaults.
+ *
+ * <p>This class is stateless and thread-safe.</p>
+ */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ObjectUtils {
 
+    /**
+     * Returns the given object when it is not {@code null}, otherwise the fallback value.
+     *
+     * @param obj the object to evaluate, may be {@code null}
+     * @param def the fallback value returned when {@code obj} is {@code null}
+     * @param <O> the type of the object and the fallback value
+     * @return {@code obj} if it is not {@code null}, otherwise {@code def}
+     */
     public static <O> O defaultIfNull(O obj, O def) {
         return (obj == null) ? def : obj;
     }
 
+    /**
+     * Checks whether the given object is {@code null}.
+     *
+     * @param obj the object to evaluate, may be {@code null}
+     * @return {@code true} if {@code obj} is {@code null}, otherwise {@code false}
+     */
     public static boolean isNull(Object obj) {
         return (obj == null);
     }
 
+    /**
+     * Checks whether the given object is not {@code null}.
+     *
+     * @param obj the object to evaluate, may be {@code null}
+     * @return {@code true} if {@code obj} is not {@code null}, otherwise {@code false}
+     */
     public static boolean isNotNull(Object obj) {
         return !isNull(obj);
     }

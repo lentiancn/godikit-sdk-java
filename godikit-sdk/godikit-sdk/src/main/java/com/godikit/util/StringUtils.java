@@ -26,33 +26,85 @@ package com.godikit.util;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+/**
+ * Utility helpers for {@link String} emptiness checks and null-safe defaults.
+ *
+ * <p>This class is stateless and thread-safe.</p>
+ */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class StringUtils {
 
+    /**
+     * Returns the given string when it is not {@code null}, otherwise the fallback value.
+     *
+     * @param s   the string to evaluate, may be {@code null}
+     * @param def the fallback value returned when {@code s} is {@code null}
+     * @return {@code s} if it is not {@code null}, otherwise {@code def}
+     */
     public static String defaultIfNull(String s, String def) {
         return ObjectUtils.defaultIfNull(s, def);
     }
 
+    /**
+     * Returns the given string when it is neither {@code null} nor empty, otherwise the fallback value.
+     *
+     * @param s   the string to evaluate, may be {@code null}
+     * @param def the fallback value returned when {@code s} is {@code null} or empty
+     * @return {@code s} if it is not empty, otherwise {@code def}
+     */
     public static String defaultIfEmpty(String s, String def) {
         return isEmpty(s) ? def : s;
     }
 
+    /**
+     * Returns the given string when it is neither {@code null} nor blank, otherwise the fallback value.
+     *
+     * <p>A blank string is one whose trimmed content is empty, e.g. {@code "  "}.</p>
+     *
+     * @param s   the string to evaluate, may be {@code null}
+     * @param def the fallback value returned when {@code s} is {@code null} or blank
+     * @return {@code s} if it is not blank, otherwise {@code def}
+     */
     public static String defaultIfBlank(String s, String def) {
         return isBlank(s) ? def : s;
     }
 
+    /**
+     * Checks whether the given string is {@code null} or has zero length.
+     *
+     * @param s the string to evaluate, may be {@code null}
+     * @return {@code true} if {@code s} is {@code null} or empty, otherwise {@code false}
+     */
     public static boolean isEmpty(String s) {
         return (s == null) || s.isEmpty();
     }
 
+    /**
+     * Checks whether the given string is neither {@code null} nor empty.
+     *
+     * @param s the string to evaluate, may be {@code null}
+     * @return {@code true} if {@code s} is not empty, otherwise {@code false}
+     */
     public static boolean isNotEmpty(String s) {
         return !isEmpty(s);
     }
 
+    /**
+     * Checks whether the given string is {@code null} or contains only whitespace.
+     *
+     * @param s the string to evaluate, may be {@code null}
+     * @return {@code true} if {@code s} is {@code null} or blank, otherwise {@code false}
+     */
     public static boolean isBlank(String s) {
         return (s == null) || s.trim().isEmpty();
     }
 
+    /**
+     * Checks whether the given string is neither {@code null} nor blank.
+     *
+     * @param s the string to evaluate, may be {@code null}
+     * @return {@code true} if {@code s} is not blank, otherwise {@code false}
+     */
     public static boolean isNotBlank(String s) {
         return !isBlank(s);
     }
