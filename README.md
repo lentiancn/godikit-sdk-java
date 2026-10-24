@@ -8,13 +8,13 @@ English | [简体中文](README_zh-Hans.md) | [繁體中文](README_zh-Hant.md)
 
 ## Why godikit-sdk?
 
-| Scenario                          | Without godikit-sdk                        | With godikit-sdk                                 |
-|-----------------------------------|-------------------------------------------|--------------------------------------------------|
-| Null and blank checks             | Repetitive `isEmpty` / `isBlank` helpers | Ready-to-use `StringUtils` and `ObjectUtils`     |
-| Default value fallback | Inline ternary null guards everywhere      | `defaultIfNull` / `defaultIfEmpty` / `defaultIfBlank` |
-| Shared capability across services | Copy-pasted helpers in every project      | One dependency for the whole organization |
-| Third-party service clients | Hand-written HTTP wrappers per project     | Dedicated SDK modules (planned)                  |
-| JDK compatibility | One artifact cannot serve both toolchains  | Separate JDK 8 and JDK 17 artifacts |
+| Scenario                          | Without godikit-sdk                       | With godikit-sdk                                      |
+|-----------------------------------|-------------------------------------------|-------------------------------------------------------|
+| Null and blank checks             | Repetitive `isEmpty` / `isBlank` helpers  | Ready-to-use `StringUtils` and `ObjectUtils`          |
+| Default value fallback            | Inline ternary null guards everywhere     | `defaultIfNull` / `defaultIfEmpty` / `defaultIfBlank` |
+| Shared capability across services | Copy-pasted helpers in every project      | One dependency for the whole organization             |
+| Third-party service clients       | Hand-written HTTP wrappers per project    | Dedicated SDK modules (planned)                       |
+| JDK compatibility                 | One artifact cannot serve both toolchains | Separate JDK 8 and JDK 17 artifacts                   |
 
 ## Features
 
@@ -22,7 +22,8 @@ English | [简体中文](README_zh-Hans.md) | [繁體中文](README_zh-Hant.md)
 - **String Guards**: `StringUtils` covers empty and blank checks with matching `defaultIf*` fallbacks
 - **Zero Dependencies**: No third-party runtime dependencies, so the SDK adds nothing to your classpath
 - **JDK 8 Baseline**: Compiled against JDK 8, with a dedicated JDK 17 artifact for modern toolchains
-- **Extensible by Design**: Structured to host further SDK categories such as shared constants, identifier generation and third-party service client wrappers
+- **Extensible by Design**: Structured to host further SDK categories such as shared constants, identifier generation
+  and third-party service client wrappers
 - **Verified Bytecode Target**: Each artifact ships a compilation test that asserts the expected class file
   major version
 
@@ -46,12 +47,12 @@ English | [简体中文](README_zh-Hans.md) | [繁體中文](README_zh-Hant.md)
 
 ### Planned SDK Categories
 
-| Category         | Purpose                                          | Status   |
-|------------------|--------------------------------------------------|----------|
-| Utilities        | Null-safe string and object helpers              | Available |
-| Shared Constants | Cross-module constants such as boolean flags     | Planned   |
-| Identifiers      | ID generation for entities and records           | Planned   |
-| Service Clients  | Wrappers for third-party APIs                    | Planned   |
+| Category         | Purpose                                      | Status    |
+|------------------|----------------------------------------------|-----------|
+| Utilities        | Null-safe string and object helpers          | Available |
+| Shared Constants | Cross-module constants such as boolean flags | Planned   |
+| Identifiers      | ID generation for entities and records       | Planned   |
+| Service Clients  | Wrappers for third-party APIs                | Planned   |
 
 ## Requirements
 
@@ -87,12 +88,12 @@ import com.godikit.util.ObjectUtils;
 String name = ObjectUtils.defaultIfNull(user.getNickname(), "anonymous");
 
 // Null checks
-if (ObjectUtils.isNull(value)) {
-    // ...
+if(ObjectUtils.isNull(value)){
+  // ...
 }
 
-if (ObjectUtils.isNotNull(value)) {
-    // ...
+if(ObjectUtils.isNotNull(value)){
+  // ...
 }
 ```
 
@@ -120,20 +121,20 @@ boolean notBlank = StringUtils.isNotBlank(raw);
 | Method                        | Description                                       |
 |-------------------------------|---------------------------------------------------|
 | `defaultIfNull(O obj, O def)` | Returns `def` when `obj` is null, otherwise `obj` |
-| `isNull(Object obj)`          | Returns `true` when `obj` is null                |
-| `isNotNull(Object obj)`       | Returns `true` when `obj` is not null            |
+| `isNull(Object obj)`          | Returns `true` when `obj` is null                 |
+| `isNotNull(Object obj)`       | Returns `true` when `obj` is not null             |
 
 ### `StringUtils`
 
-| Method                            | Description                                        |
-|-----------------------------------|----------------------------------------------------|
-| `defaultIfNull(String s, String def)` | Returns `def` when `s` is null                   |
-| `defaultIfEmpty(String s, String def)` | Returns `def` when `s` is null or empty         |
-| `defaultIfBlank(String s, String def)` | Returns `def` when `s` is null or whitespace only |
-| `isEmpty(String s)`               | Returns `true` when `s` is null or zero length     |
-| `isNotEmpty(String s)`            | Returns `true` when `s` is neither null nor empty  |
-| `isBlank(String s)`               | Returns `true` when `s` is null or whitespace only  |
-| `isNotBlank(String s)`            | Returns `true` when `s` is neither null nor blank  |
+| Method                                 | Description                                        |
+|----------------------------------------|----------------------------------------------------|
+| `defaultIfNull(String s, String def)`  | Returns `def` when `s` is null                     |
+| `defaultIfEmpty(String s, String def)` | Returns `def` when `s` is null or empty            |
+| `defaultIfBlank(String s, String def)` | Returns `def` when `s` is null or whitespace only  |
+| `isEmpty(String s)`                    | Returns `true` when `s` is null or zero length     |
+| `isNotEmpty(String s)`                 | Returns `true` when `s` is neither null nor empty  |
+| `isBlank(String s)`                    | Returns `true` when `s` is null or whitespace only |
+| `isNotBlank(String s)`                 | Returns `true` when `s` is neither null nor blank  |
 
 ## License
 
