@@ -76,7 +76,7 @@ public class StringUtils {
      * @return {@code true} if {@code s} is {@code null} or empty, otherwise {@code false}
      */
     public static boolean isEmpty(String s) {
-        return (s == null) || s.isEmpty();
+        return ObjectUtils.isNull(s) || s.isEmpty();
     }
 
     /**
@@ -96,7 +96,7 @@ public class StringUtils {
      * @return {@code true} if {@code s} is {@code null} or blank, otherwise {@code false}
      */
     public static boolean isBlank(String s) {
-        return (s == null) || s.trim().isEmpty();
+        return ObjectUtils.isNull(s) || s.trim().isEmpty();
     }
 
     /**
